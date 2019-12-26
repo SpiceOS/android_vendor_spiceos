@@ -22,6 +22,9 @@ SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SPICEOS_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(SPICEOS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(SPICEOS_TARGET_PACKAGE).sha256sum
+	$(hide) mv -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SPICEOS_TARGET_PACKAGE)
+	$(hide) $(MD5) $(SPICEOS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(SPICEOS_TARGET_PACKAGE).md5sum
+	@echo "Creating json OTA..." >&2
+	$(hide) ./vendor/spiceos/build/tools/createjson.sh $(TARGET_DEVICE) $(PRODUCT_OUT) $(SPICEOS_VERSION).zip
+	$(hide) rm -rf $(call intermediates-dir-for,PACKAGING,target_files)
 	@echo "Package Complete: $(SPICEOS_TARGET_PACKAGE)" >&2
