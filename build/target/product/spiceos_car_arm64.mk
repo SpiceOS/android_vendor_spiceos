@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, build/target/product/aosp_arm_ab.mk)
-include vendor/lineage/build/target/product/lineage_generic_target.mk
+include vendor/spiceos/build/target/product/spiceos_generic_car_target.mk
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_arm64.mk)
 
 TARGET_NO_KERNEL_OVERRIDE := true
-TARGET_USES_64_BIT_BINDER := true
 
-PRODUCT_NAME := lineage_arm_ab
+PRODUCT_NAME := spiceos_car_arm64
