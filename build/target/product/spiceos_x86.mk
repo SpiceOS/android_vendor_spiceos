@@ -12,13 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/google/atv/products/aosp_tv_x86_64.mk)
+$(call inherit-product, build/target/product/aosp_x86.mk)
+$(call inherit-product, build/target/product/gsi_release.mk)
 
-include vendor/lineage/build/target/product/lineage_generic_tv_target.mk
+include vendor/spiceos/build/target/product/spiceos_generic_target.mk
 
-PRODUCT_NAME := lineage_tv_x86_64
+TARGET_USES_64_BIT_BINDER := true
 
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS :=
+# Enable mainline checking
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
 
-PRODUCT_SDK_ADDON_NAME := lineage
+PRODUCT_NAME := spiceos_x86
+
+PRODUCT_SDK_ADDON_NAME := spiceos
 PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties

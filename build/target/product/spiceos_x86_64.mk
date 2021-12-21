@@ -12,8 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/lineage/build/target/product/lineage_generic_car_target.mk
+$(call inherit-product, build/target/product/aosp_x86_64.mk)
+$(call inherit-product, build/target/product/gsi_release.mk)
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/sdk_x86_64.mk)
+include vendor/spiceos/build/target/product/spiceos_generic_target.mk
 
-PRODUCT_NAME := lineage_car_x86_64
+# Enable mainline checking
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
+
+PRODUCT_NAME := spiceos_x86_64
+
+PRODUCT_SDK_ADDON_NAME := spiceos
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties
