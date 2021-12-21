@@ -1,5 +1,4 @@
-# Copyright (C) 2015 The CyanogenMod Project
-#           (C) 2017-2018 The LineageOS Project
+# Copyright (C) 2018-2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,5 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Rules for QCOM targets
-include $(TOPDIR)vendor/spiceos/build/core/qcom_target.mk
+$(call inherit-product, build/target/product/aosp_x86.mk)
+$(call inherit-product, build/target/product/gsi_release.mk)
+
+include vendor/spiceos/build/target/product/spiceos_generic_target.mk
+
+TARGET_USES_64_BIT_BINDER := true
+
+# Enable mainline checking
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
+
+PRODUCT_NAME := spiceos_x86
+
+PRODUCT_SDK_ADDON_NAME := spiceos
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2021 The LineageOS Project
+# Copyright (C) 2018-2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,29 +15,25 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_arm.mk \
-    $(LOCAL_DIR)/lineage_arm64.mk \
-    $(LOCAL_DIR)/lineage_x86.mk \
-    $(LOCAL_DIR)/lineage_x86_64.mk \
-    $(LOCAL_DIR)/lineage_tv_arm.mk \
-    $(LOCAL_DIR)/lineage_tv_arm64.mk \
-    $(LOCAL_DIR)/lineage_tv_x86.mk \
-    $(LOCAL_DIR)/lineage_tv_x86_64.mk \
-    $(LOCAL_DIR)/lineage_car_arm64.mk \
-    $(LOCAL_DIR)/lineage_car_x86_64.mk \
-    $(LOCAL_DIR)/lineage_sdk_phone_x86.mk \
-    $(LOCAL_DIR)/lineage_sdk_phone_x86_64.mk
+    $(LOCAL_DIR)/spiceos_arm.mk \
+    $(LOCAL_DIR)/spiceos_arm64.mk \
+    $(LOCAL_DIR)/spiceos_x86.mk \
+    $(LOCAL_DIR)/spiceos_x86_64.mk \
+    $(LOCAL_DIR)/spiceos_tv_arm.mk \
+    $(LOCAL_DIR)/spiceos_tv_arm64.mk \
+    $(LOCAL_DIR)/spiceos_tv_x86.mk \
+    $(LOCAL_DIR)/spiceos_tv_x86_64.mk \
+    $(LOCAL_DIR)/spiceos_car_arm64.mk \
+    $(LOCAL_DIR)/spiceos_car_x86_64.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_arm-userdebug \
-    lineage_arm64-userdebug \
-    lineage_x86-userdebug \
-    lineage_x86_64-userdebug \
-    lineage_tv_arm-userdebug \
-    lineage_tv_arm64-userdebug \
-    lineage_tv_x86-userdebug \
-    lineage_tv_x86_64-userdebug \
-    lineage_car_arm64-userdebug \
-    lineage_car_x86_64-userdebug \
-    lineage_sdk_phone_x86-userdebug \
-    lineage_sdk_phone_x86_64-userdebug
+    spiceos_arm-userdebug \
+    spiceos_arm64-userdebug \
+    spiceos_x86-userdebug \
+    spiceos_x86_64-userdebug \
+    spiceos_tv_arm-userdebug \
+    spiceos_tv_arm64-userdebug \
+    spiceos_tv_x86-userdebug \
+    spiceos_tv_x86_64-userdebug \
+    spiceos_car_arm64-userdebug \
+    spiceos_car_x86_64-userdebug
