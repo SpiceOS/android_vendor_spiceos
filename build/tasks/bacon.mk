@@ -16,7 +16,7 @@
 # -----------------------------------------------------------------
 # SpiceOS OTA update package
 
-SPICEOS_TARGET_PACKAGE := $(PRODUCT_OUT)/spiceos-$(SPICEOS_VERSION).zip
+SPICEOS_TARGET_PACKAGE := $(PRODUCT_OUT)/SpiceOS-$(SPICEOS_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
