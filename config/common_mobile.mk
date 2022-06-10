@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
     Backgrounds \
     Eleven \
     Etar \
+    GameSpace \
     ExactCalculator \
     Jelly \
     Profiles \
