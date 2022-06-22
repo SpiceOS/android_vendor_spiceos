@@ -30,14 +30,14 @@ if [ -f $existingOTAjson ]; then
 	maintainer=`grep -n "maintainer" $existingOTAjson | cut -d ":" -f 3 | sed 's/"//g' | sed 's/,//g' | xargs`
 	oem=`grep -n "oem" $existingOTAjson | cut -d ":" -f 3 | sed 's/"//g' | sed 's/,//g' | xargs`
 	device=`grep -n "device" $existingOTAjson | cut -d ":" -f 3 | sed 's/"//g' | sed 's/,//g' | xargs`
-	filename=$3
-	version=`echo "$3" | cut -d'-' -f2`
-	download="https://sourceforge.net/projects/spiceos/files/12.1/'$device'/'$4'/download"
+	filename=SpiceOS-$3
+	version=`echo "$filename" | cut -d'-' -f2`
+	download="https://sourceforge.net/projects/spiceos/files/12.1/'$device'/'$filename'/download"
 	buildprop=$2/system/build.prop
 	linenr=`grep -n "ro.system.build.date.utc" $buildprop | cut -d':' -f1`
 	timestamp=`sed -n $linenr'p' < $buildprop | cut -d'=' -f2`
-	md5=`md5sum "$2/$3" | cut -d' ' -f1`
-	size=`stat -c "%s" "$2/$3"`
+	md5=`md5sum "$2/$filename" | cut -d' ' -f1`
+	size=`stat -c "%s" "$2/$filename"`
 	buildtype=`grep -n "type" $existingOTAjson | cut -d ":" -f 3 | sed 's/"//g' | sed 's/,//g' | xargs`
 	forum=`grep -n "\"forum\"" $existingOTAjson | cut -d ":" -f 4 | sed 's/"//g' | sed 's/,//g' | xargs`
 	if [ ! -z "$forum" ]; then
@@ -79,7 +79,7 @@ if [ -f $existingOTAjson ]; then
 			"oem": "'$oem'",
 			"device": "'$device'",
 			"filename": "'$filename'",
-			"download": "https://sourceforge.net/projects/spiceos/files/12.1/'$1'/'$3'/download",
+			"download": "https://sourceforge.net/projects/spiceos/files/12.1/'$1'/'$filename'/download",
 			"timestamp": '$timestamp',
 			"md5": "'$md5'",
 			"size": '$size',
