@@ -42,6 +42,8 @@
 #                                          Defaults to empty
 #   TARGET_KERNEL_EXT_MODULES          = Optional, the external modules we are
 #                                          building. Defaults to empty
+#   TARGET_KERNEL_DTBO                 = Name of the kernel Makefile target that
+#                                        generates dtbo.img. Defaults to dtbo.img
 #
 #   KERNEL_TOOLCHAIN_PREFIX            = Overrides TARGET_KERNEL_CROSS_COMPILE_PREFIX,
 #                                          Set this var in shell to override
