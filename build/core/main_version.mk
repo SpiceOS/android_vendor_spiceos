@@ -10,6 +10,7 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.spiceos.releasetype=$(SPICEOS_BUILDTYPE) \
     ro.spiceos.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
     ro.modversion=$(SPICEOS_VERSION) \
+    ro.spiceos.build_security_patch=$(SPICEOS_SECURITY_PATCH) \
     ro.spiceos.build.date=$(BUILD_DATE)
 #    ro.lineagelegal.url=https://lineageos.org/legal
 
