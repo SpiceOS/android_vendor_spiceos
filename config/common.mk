@@ -113,7 +113,7 @@ PRODUCT_COPY_FILES += \
 
 # Themes
 PRODUCT_PACKAGES += \
-    LineageThemesStub \
+    SpiceOSThemesStub \
     ThemePicker
 
 # Config
