@@ -538,6 +538,10 @@ MKDTBOIMG := $(HOST_OUT_EXECUTABLES)/mkdtboimg.py$(HOST_EXECUTABLE_SUFFIX)
 $(INSTALLED_DTBIMAGE_TARGET): $(MKDTBOIMG)
 endif
 $(INSTALLED_DTBIMAGE_TARGET): $(DTC) $(DTB_OUT)
+ifeq ($(TARGET_WANTS_EMPTY_DTB),true)
+	@rm -f $@
+	echo "empty" > $@
+else
 	@echo "Building dtb.img"
 	$(hide) find $(DTB_OUT)/arch/$(KERNEL_ARCH)/boot/dts -type f -name "*.dtb" | xargs rm -f
 	$(call make-dtb-target,$(KERNEL_DEFCONFIG))
@@ -548,6 +552,8 @@ else
 	cat $(shell find $(DTB_OUT)/arch/$(KERNEL_ARCH)/boot/dts -type f -name "*.dtb" | sort) > $@
 endif # BOARD_DTB_CFG
 	$(hide) touch -c $(DTB_OUT)
+endif # !TARGET_WANTS_EMPTY_DTB
+
 endif # !BOARD_PREBUILT_DTBIMAGE_DIR
 endif # BOARD_CUSTOM_DTBIMG_MK
 endif # BOARD_INCLUDE_DTB_IN_BOOTIMG
