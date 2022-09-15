@@ -24,7 +24,8 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/spiceos_tv_x86.mk \
     $(LOCAL_DIR)/spiceos_tv_x86_64.mk \
     $(LOCAL_DIR)/spiceos_car_arm64.mk \
-    $(LOCAL_DIR)/spiceos_car_x86_64.mk
+    $(LOCAL_DIR)/spiceos_car_x86_64.mk \
+    $(LOCAL_DIR)/spiceos_sdk_phone_x86_64.mk
 
 COMMON_LUNCH_CHOICES := \
     spiceos_arm-userdebug \
@@ -36,4 +37,4 @@ COMMON_LUNCH_CHOICES := \
     spiceos_tv_x86-userdebug \
     spiceos_tv_x86_64-userdebug \
     spiceos_car_arm64-userdebug \
-    spiceos_car_x86_64-userdebug
+    spiceos_sdk_phone_x86_64-userdebug
