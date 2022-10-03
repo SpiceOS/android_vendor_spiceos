@@ -155,4 +155,8 @@
 
     <!-- the number of the max cached processes in the system. -->
     <integer name="config_customizedMaxCachedProcesses">64</integer>
+
+    <!-- Default component for QR code scanner -->
+    <string name="config_defaultQrCodeComponent">com.android.camera2/org.lineageos.quickreader.ScannerActivity</string>
+
 </resources>
