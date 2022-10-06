@@ -32,7 +32,7 @@ if [ -f $existingOTAjson ]; then
 	device=`grep -n "device" $existingOTAjson | cut -d ":" -f 3 | sed 's/"//g' | sed 's/,//g' | xargs`
 	filename=SpiceOS-$3
 	version=`echo "$filename" | cut -d'-' -f2`
-	download="https://sourceforge.net/projects/spiceos/files/12.1/'$device'/'$filename'/download"
+	download="https://sourceforge.net/projects/spiceos/files/13/'$device'/'$filename'/download"
 	buildprop=$2/system/build.prop
 	linenr=`grep -n "ro.system.build.date.utc" $buildprop | cut -d':' -f1`
 	timestamp=`sed -n $linenr'p' < $buildprop | cut -d'=' -f2`
@@ -79,7 +79,7 @@ if [ -f $existingOTAjson ]; then
 			"oem": "'$oem'",
 			"device": "'$device'",
 			"filename": "'$filename'",
-			"download": "https://sourceforge.net/projects/spiceos/files/12.1/'$1'/'$filename'/download",
+			"download": "https://sourceforge.net/projects/spiceos/files/13/'$1'/'$filename'/download",
 			"timestamp": '$timestamp',
 			"md5": "'$md5'",
 			"size": '$size',
@@ -100,7 +100,7 @@ if [ -f $existingOTAjson ]; then
 else
 	#if not already supported, create dummy file with info in it on how to
 	echo 'There is no official support for this device yet' >> $output;
-	echo 'Consider adding official support by reading the documentation at https://github.com/SpiceOS-Beta/android_packages_apps_Updater_Db/blob/12.1/README.md' >> $output;
+	echo 'Consider adding official support by reading the documentation at https://github.com/SpiceOS/android_packages_apps_Updater_Db/blob/13/README.md' >> $output;
 fi
 
 echo "JSON file data for OTA support is at: '$2'/'$device'.json"
