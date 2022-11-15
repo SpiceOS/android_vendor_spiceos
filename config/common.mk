@@ -81,6 +81,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Include AOSP audio files
 include vendor/spiceos/config/aosp_audio.mk
 
+# Google Photos Pixel Exclusive XML
+PRODUCT_COPY_FILES += \
+    vendor/superior/prebuilt/common/etc/sysconfig/pixel_2016_exclusive.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_2016_exclusive.xml
+
 # Include Lineage audio files
 include vendor/spiceos/config/lineage_audio.mk
 
