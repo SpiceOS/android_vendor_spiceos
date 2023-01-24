@@ -117,7 +117,7 @@ PRODUCT_COPY_FILES += \
 
 # Themes
 PRODUCT_PACKAGES += \
-    LineageThemesStub \
+    ThemesStub \
     ThemePicker
 
 # Config
